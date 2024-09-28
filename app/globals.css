@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '~@flaticon/flaticon-uicons/css/all/all.css';
+
 @import url("../styles/theme.css");
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-poppins), sans-serif; 
 }
 
 @layer utilities {
