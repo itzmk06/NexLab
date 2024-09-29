@@ -11,7 +11,7 @@ import GlobalSearch from "../search/GlobalSearch";
 export default function Navbar(){
     const {mode}=useTheme();
     return(
-        <nav className="flex-between background-light900_dark200 fixed z-50 w-full  gap-5 p-2 shadow-light-300 dark:shadow-none sm:px-12">
+        <nav className="flex-between background-light900_dark200 fixed z-50 w-full  gap-5  p-2 shadow-light-300 dark:shadow-none sm:px-12 md:px-6 ">
         <Link href='/dashboard' className="flex items-center gap-[0.1rem] md:pl-0">
             <Image className="w-8 md:w-8"
             src={`${mode==='dark'?'/assets/nexlab-light.png':'/assets/nexlab.png'}`}

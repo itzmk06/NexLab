@@ -101,6 +101,10 @@ body {
     background: #555;
   }
 
+  .scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+
   .markdown a {
     color: #1da1f2;
   }
