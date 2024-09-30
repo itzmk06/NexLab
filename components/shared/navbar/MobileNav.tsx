@@ -29,7 +29,7 @@ const NavContent = () => {
                 href={item.route}
                 className={`flex items-center justify-start  gap-3 px-2 transition duration-200 md:gap-2 ${
                   isActive 
-                    ? "rounded-lg bg-blue-600 font-bold text-zinc-200" 
+                    ? "rounded-lg bg-blue-500 font-bold text-zinc-200" 
                     : "text-dark300_light900 bg-transparent"
                 } ${item.hoverColor}  py-3 md:py-[0.2rem]`}
               >
