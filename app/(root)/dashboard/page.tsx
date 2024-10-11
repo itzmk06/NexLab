@@ -4,6 +4,57 @@ import LocalSearch from "@/components/shared/search/LocalSearch";
 import Filter from "@/components/shared/Filter";
 import { HomePageFilters } from "@/constants/filters";
 import DashBoardFilters from "@/components/dashboard/DashBoardFilters";
+import NoResults from "@/components/shared/NoResults";
+import QuestionCard from "@/components/cards/QuestionCard";
+
+const questions= [
+    {
+        _id: "1",
+        title: "Cascading deletes in sqlalchemy?",
+        tags: [
+            {
+                _id: "1",
+                name: "python",
+            },
+            {
+                _id: "2",
+                name: "sql"
+            }
+        ],
+        author: {
+            _id: "a1",
+            name: "John Doe",
+            picture: "https://example.com/john.jpg" 
+        },
+        upVotes: 10,
+        views: 100,
+        answers: [], 
+        createdAt: new Date('2024-09-01T12:00:00.00Z')
+    },
+    {
+        _id: "2",
+        title: "What is NexLab",
+        tags: [
+            {
+                _id: "1",
+                name: "math",
+            },
+            {
+                _id: "2",
+                name: "algorithms"
+            }
+        ],
+        author: {
+            _id: "a2",
+            name: "Samrath",
+            picture: "https://example.com/samrath.jpg"
+        },
+        upVotes: 60,
+        views: 200,
+        answers: [], 
+        createdAt: new Date('2024-02-01T12:00:00.00Z')
+    }
+];
 
 
 export default function Home(){
@@ -31,6 +82,34 @@ export default function Home(){
             </div>
             <div>
                 <DashBoardFilters/>
+            </div>
+            <div className="mt-5 flex w-full flex-col gap-3">
+                {
+                    questions.length>0?(
+                        questions.map((question)=>{
+                            return (
+                                <QuestionCard 
+                                    key={question._id}
+                                    _id={question._id}
+                                    title={question.title}
+                                    tags={question.tags}
+                                    author={question.author}
+                                    upVotes={question.upVotes}
+                                    views={question.views}
+                                    answers={question.answers}
+                                    createdAt={question.createdAt}
+                                />
+                            )
+                        })
+                    ):(
+                            <NoResults
+                                title="There&apos;s no questions to show"
+                                description="Be the first to break silence! Ask a question and kickstart the discussion. our query could be the next big thing others learn from. Get involved!"
+                                link="/"
+                                linkTitle="Ask a Question"
+                            />
+                    )
+                }
             </div>
         </div>
     )

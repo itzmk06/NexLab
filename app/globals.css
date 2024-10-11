@@ -24,7 +24,7 @@ body {
   }
 
   .card-wrapper {
-    @apply bg-light-900 dark:bg-dark-gradient shadow-light-100 dark:shadow-none;
+    @apply bg-[#ECECEC] dark:bg-[#0A0D10] shadow-light-100 dark:shadow-none;
   }
 
   .btn {

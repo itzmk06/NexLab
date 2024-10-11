@@ -28,11 +28,11 @@ export default function Filter({filters,otherClasses,containerClasses}:Props){
                     <SelectValue placeholder="select a filter" />
                 </div>
                 </SelectTrigger>
-                <SelectContent>
-                    <SelectGroup>
+                <SelectContent className="border-none">
+                    <SelectGroup >
                         {
                             filters.map((item)=>{
-                                return <SelectItem value={item?.value} key={item?.value}>
+                                return <SelectItem className="text-dark500_light700" value={item?.value} key={item?.value}>
                                     {item?.name}
                                 </SelectItem>
                             })
