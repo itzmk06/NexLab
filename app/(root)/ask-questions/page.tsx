@@ -1,7 +1,12 @@
-export default  function AskQuestions(){
+import Questions from "@/components/forms/Questions";
+
+export default  function Page(){
     return (
-        <main>
-            <h1>Ask Questions</h1>
-        </main>
+        <div>
+            <h1 className="text-dark100_light900 text-lg font-semibold">Ask a question</h1>
+            <div className="mt-3">
+                <Questions/>
+            </div>
+        </div>
     )
 };
