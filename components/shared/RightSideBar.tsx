@@ -3,51 +3,51 @@ import RenderTag from "./RenderTag";
 
 const trendQuestions = [
   {
-    _id: 1,
+    _id: "1",
     question:
       "How to Ensure Unique User Profile with ON CONFLICT in PostgreSQL Using Drizzle ORM?",
   },
   {
-    _id: 2,
+    _id: "2",
     question:
       "What are the benefits and trade-offs of using Server-Side Rendering (SSR) in Next.js?",
   },
   {
-    _id: 3,
+    _id: "3",
     question:
       "Node.js res.json() and res.send(), not working but still able to change status code",
   },
   {
-    _id: 4,
+    _id: "4",
     question: "How to center a div?",
   },
   {
-    _id: 5,
+    _id: "5",
     question: "ReactJs or NextJs for begginers i ask for advice",
   },
 ];
 
 const popularTags=[
     {
-        _id:1,
+        _id:"1",
         name:"javascript",
         totalQuestions:10,
         showCount:1
     },
     {
-        _id:2,
+        _id:"2",
         name:"java",
         totalQuestions:12,
         showCount:1
     },
         {
-            _id:3,
+            _id:"3",
             name:"python",
             totalQuestions:8,
             showCount:1
         },
         {
-            _id:4,
+            _id:"4",
             name:"react",
             totalQuestions:50,
             showCount:1

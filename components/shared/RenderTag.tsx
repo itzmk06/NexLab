@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface Props {
   name: string;
-  _id: number;
+  _id: string;
   totalQuestions?: number;
   showCount?: boolean;
 }
@@ -15,7 +15,7 @@ export default function RenderTag({
   showCount,
 }: Props) {
   return (
-    <Link href={`/tags/${_id}`} className="flex w-full justify-between gap-4">
+    <Link href={`/tags/${_id}`} className="flex justify-between">
       <Badge className="subtle-medium background-light900_dark300 text-light400_light500 rounded-md border-none px-4 py-2 uppercase">
         {name}
       </Badge>

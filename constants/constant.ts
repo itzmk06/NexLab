@@ -50,7 +50,7 @@ export const sidebarLinks: SidebarLink[] = [
 },
 {
     icon: "fi fi-sr-info",
-    route: "/ask-question",
+    route: "/ask-questions",
     label: "Ask a question",
     color: "#4CAF50",
     hoverColor: "hover:bg-[#4CAF50] hover:bg-opacity-30",
