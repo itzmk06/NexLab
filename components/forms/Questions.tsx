@@ -19,6 +19,7 @@ import { QuestionsSchema } from "@/lib/validations";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { TagFilters } from "@/constants/filters";
+import { createQuestion } from "@/lib/actions/question.action";
 
 export default function Questions() {
   const editorRef = useRef(null);
@@ -34,10 +35,12 @@ export default function Questions() {
     },
   });
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setisSubmitting(true);
     try {
+      await createQuestion({});
     } catch (error) {
+      console.log("not submitting!");
     } finally {
       setisSubmitting(false);
     }
@@ -117,6 +120,11 @@ export default function Questions() {
               <FormControl className="mt-2">
                 <Editor
                   apiKey={process.env.NEXT_PUBLIC_TINY_API_KEY}
+                  onInit={(evt, editor) => {
+                    editorRef.current = editor;
+                  }}
+                  onBlur={field.onBlur}
+                  onEditorChange={(content) => field.onChange(content)}
                   init={{
                     plugins: [
                       "advlist",
