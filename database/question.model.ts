@@ -9,6 +9,7 @@ export interface IQuestion extends Document {
   downvotes: Schema.Types.ObjectId[];
   author: Schema.Types.ObjectId;
   answers: Schema.Types.ObjectId[];
+  createdAt: Date;
 }
 
 const QuestionSchema = new Schema({
