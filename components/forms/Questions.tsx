@@ -20,12 +20,18 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { TagFilters } from "@/constants/filters";
 import { createQuestion } from "@/lib/actions/question.action";
+import { useRouter, usePathname } from "next/navigation";
 
-export default function Questions() {
+interface Props {
+  mongoUserId: string;
+}
+
+export default function Questions({ mongoUserId }: Props) {
   const editorRef = useRef(null);
   const [isSubmitting, setisSubmitting] = useState(false);
   const type: any = "create";
-
+  const router = useRouter();
+  const pathname = usePathname();
   const form = useForm<z.infer<typeof QuestionsSchema>>({
     resolver: zodResolver(QuestionsSchema),
     defaultValues: {
@@ -38,7 +44,13 @@ export default function Questions() {
   async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setisSubmitting(true);
     try {
-      await createQuestion({});
+      await createQuestion({
+        title: values.title,
+        content: values.explaination,
+        tags: values.tags,
+        author: JSON.parse(mongoUserId),
+      });
+      router.push("/");
     } catch (error) {
       console.log("not submitting!");
     } finally {

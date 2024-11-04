@@ -1,21 +1,31 @@
 import mongoose from "mongoose";
 
-let isConnected: boolean = false;
+let isConnected = false;
 
 export const connectToDatabase = async () => {
   mongoose.set("strictQuery", true);
+
   if (!process.env.MONGODB_URL) {
-    return console.log("Missing mongodb url");
+    console.log("Missing MongoDB URL");
+    return;
   }
+
   if (isConnected) {
-    return console.log("Mongodb is already connected!");
+    console.log("MongoDB is already connected!");
+    return;
   }
+
   try {
-    await mongoose.connect(process.env.MONGODB_URL, { dbName: "NexLab" });
+    await mongoose.connect(process.env.MONGODB_URL, {
+      dbName: "nexlab",
+      connectTimeoutMS: 30000,
+    });
+
     isConnected = true;
-    console.log("MONGODB is connected!");
+    console.log("MongoDB is connected!");
   } catch (error) {
-    console.log("MONGODB connection failure!", error);
+    console.log("MongoDB connection failure:", error);
+  } finally {
+    console.log("Exiting connection attempt");
   }
-  console.log("come outside");
 };
