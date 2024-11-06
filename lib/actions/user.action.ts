@@ -5,7 +5,7 @@ import { connectToDatabase } from "../mongoose";
 
 export async function getUserById(params: any) {
   try {
-    connectToDatabase();
+    await connectToDatabase();
 
     const { userId } = params;
 
