@@ -83,7 +83,7 @@ export interface DeleteQuestionParams {
   path: string;
 }
 
-export interface EditQuestionParams {
+export interface EditQuestionParam {
   questionId: string;
   title: string;
   content: string;
