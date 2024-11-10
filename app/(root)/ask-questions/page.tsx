@@ -10,7 +10,7 @@ const Page = async () => {
     redirect("/sign-in");
   }
   const mongoUser = await getUserById({ userId });
-  console.log(mongoUser);
+  // console.log(mongoUser);
   return (
     <div>
       <h1 className="text-dark100_light900 text-lg font-semibold">

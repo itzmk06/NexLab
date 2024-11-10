@@ -11,7 +11,7 @@ export const connectToDatabase = async () => {
   }
 
   if (isConnected) {
-    console.log("MongoDB is already connected!");
+    // console.log("MongoDB is already connected!");
     return;
   }
 
@@ -22,10 +22,10 @@ export const connectToDatabase = async () => {
     });
 
     isConnected = true;
-    console.log("MongoDB is connected!");
+    // console.log("MongoDB is connected!");
   } catch (error) {
-    console.log("MongoDB connection failure:", error);
+    // console.log("MongoDB connection failure:", error);
   } finally {
-    console.log("Exiting connection attempt");
+    // console.log("Exiting connection attempt");
   }
 };
