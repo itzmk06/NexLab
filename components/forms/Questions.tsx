@@ -56,12 +56,12 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
 
     try {
       if (type === "Edit") {
-        await editQuestion({
-          questionId: parsedQuestionDetails._id,
-          title: values.title,
-          content: values.explaination,
-          path: pathname,
-        });
+        // await editQuestion({
+        //   questionId: parsedQuestionDetails._id,
+        //   title: values.title,
+        //   content: values.explaination,
+        //   path: pathname,
+        // });
 
         router.push(`/question/${parsedQuestionDetails._id}`);
       } else {
